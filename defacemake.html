@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CyberSocitys — Demo</title>
+<style>
+:root{
+  --bg1:#0f0f0f;
+  --bg2:#1a0000;
+  --bg3:#2b0033;
+  --text:#f33;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;width:100%;overflow:hidden;font-family:monospace;background:linear-gradient(-45deg,var(--bg1),var(--bg2),var(--bg3));background-size:400% 400%;animation:gradientBG 12s ease infinite}
+@keyframes gradientBG{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.container{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#eee;padding:20px}
+.logo{width:140px;height:140px;border-radius:50%;object-fit:cover;margin-bottom:20px;box-shadow:0 0 30px rgba(255,0,0,0.5)}
+.title{font-size:42px;font-weight:bold;color:var(--text);position:relative;display:inline-block;animation:glitch 2s infinite}
+.subtitle{font-size:16px;margin-top:12px;opacity:.95;border-right:2px solid #f33;white-space:nowrap;overflow:hidden}
+
+/* glitch effect */
+@keyframes glitch{
+  0%{text-shadow:2px 0 #0ff,-2px 0 #f0f}
+  20%{text-shadow:-2px -2px #0ff,2px 2px #f0f}
+  40%{text-shadow:2px 2px #0ff,-2px -2px #f0f}
+  60%{text-shadow:-2px 2px #0ff,2px -2px #f0f}
+  80%{text-shadow:2px -2px #0ff,-2px 2px #f0f}
+  100%{text-shadow:0 0 #0ff,0 0 #f0f}
+}
+
+/* popup cảnh báo */
+#warning{position:fixed;inset:0;z-index:99;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.9);backdrop-filter:blur(4px)}
+.warning-box{background:#111;padding:24px 32px;border-radius:12px;max-width:400px;text-align:center;border:1px solid #f33;box-shadow:0 0 25px rgba(255,0,0,0.4)}
+.warning-box img{width:100px;height:100px;object-fit:cover;border-radius:50%;margin-bottom:14px}
+.warning-box h2{margin:0 0 10px;font-size:22px;color:#f33}
+.warning-box p{margin:0 0 16px;font-size:14px;color:#eee;line-height:1.4}
+.warning-box button{background:transparent;border:1px solid #f33;color:#f33;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:14px}
+.warning-box button:hover{background:#f33;color:#000}
+</style>
+</head>
+<body oncontextmenu="return false">
+
+<!-- main -->
+<div class="container" id="main" style="display:none">
+  <img class="logo" src="https://raw.githubusercontent.com/ngaythodedu123123-alt/Def/main/IMG_0552.png" alt="logo"/>
+  <h1 class="title">CyberSocitys Was Here!</h1>
+  <div id="type" class="subtitle"></div>
+</div>
+
+<!-- popup cảnh báo -->
+<div id="warning">
+  <div class="warning-box">
+    <img src="https://raw.githubusercontent.com/ngaythodedu123123-alt/Def/main/IMG_0552.png" alt="logo"/>
+    <h2>⚠️ CyberSocitys Was There!</h2>
+    <p>Alert For Admin:<br>We Was There</p>
+    <button id="closeWarn">OK</button>
+  </div>
+</div>
+
+<script>
+/* typewriter effect */
+function typeWriter(el,text,speed=40){
+  let i=0;
+  function loop(){
+    if(i<=text.length){
+      el.textContent=text.slice(0,i);
+      i++;setTimeout(loop,speed);
+    }
+  } loop();
+}
+
+/* popup */
+const warn=document.getElementById("warning");
+const main=document.getElementById("main");
+document.getElementById("closeWarn").onclick=function(){
+  warn.style.display="none";
+  main.style.display="flex";
+  typeWriter(document.getElementById("type"),">>> SYSTEM BREACHED. ADMIN ALERTED.");
+};
+</script>
+</body>
+</html>
