@@ -1,172 +1,114 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sắc Hồng Yêu Thương - 20/10</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<style>
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #ffe6f0, #ffccff);
-  color: #333;
-  overflow-x: hidden;
-}
-.background-animation {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0; left: 0;
-  background-image: radial-gradient(rgba(255,255,255,0.2) 2px, transparent 2px);
-  background-size: 50px 50px;
-  animation: moveBg 10s linear infinite;
-  z-index: -1;
-}
-@keyframes moveBg { from{background-position:0 0;} to{background-position:100px 100px;} }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sắc Hồng Yêu Thương - 20/10</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffccff);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-.container { text-align: center; padding: 50px 20px; }
-h1 { font-family: 'Dancing Script', cursive; font-size: 3em; color: #e91e63; margin-bottom: 0; }
-.subtitle { font-size: 1.3em; color: #ff4081; margin-bottom: 40px; }
+    .container {
+      padding: 60px 20px;
+    }
 
-.message-box {
-  background: rgba(255,255,255,0.8);
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(255,105,180,0.3);
-  display: inline-block;
-  padding: 30px 40px;
-  max-width: 600px;
-  position: relative;
-}
-.flower-decoration { position: absolute; font-size: 2em; }
-.top-left { top: 10px; left: 10px; }
-.bottom-right { bottom: 10px; right: 10px; }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3em;
+      color: #e91e63;
+    }
 
-.greeting { font-size: 1.3em; color: #c2185b; margin-top: 20px; }
-.detail-message { font-size: 1em; color: #555; margin: 15px 0 30px; }
+    .subtitle {
+      color: #ff4081;
+      font-weight: bold;
+    }
 
-button {
-  background: #e91e63;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 25px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  margin: 10px;
-}
-button:hover {
-  background: #ff4081;
-  transform: scale(1.05);
-}
+    .message-box {
+      background: rgba(255, 255, 255, 0.85);
+      display: inline-block;
+      padding: 30px 40px;
+      border-radius: 25px;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      margin-top: 20px;
+      max-width: 600px;
+    }
 
-.message {
-  opacity: 0;
-  font-size: 1.2em;
-  color: #880e4f;
-  margin-top: 25px;
-  line-height: 1.6;
-  transition: opacity 1.5s ease;
-}
-.message.show { opacity: 1; }
+    .greeting {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
 
-.flower {
-  position: fixed;
-  top: -50px;
-  pointer-events: none;
-  animation: fall linear forwards;
-}
-@keyframes fall {
-  to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-}
-footer { margin-top: 40px; font-style: italic; color: #880e4f; }
+    .detail-message {
+      color: #880e4f;
+      font-size: 1em;
+    }
 
-iframe {
-  display: none; /* Ẩn player xấu */
-}
-</style>
+    button {
+      margin-top: 20px;
+      background: #e91e63;
+      border: none;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 25px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff4081;
+      transform: scale(1.05);
+    }
+
+    .soundcloud-box {
+      margin-top: 25px;
+      display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-<div class="background-animation"></div>
-<div class="container">
-  <header>
+
+  <div class="container">
     <h1>Ngày Phụ Nữ Việt Nam</h1>
     <p class="subtitle">20 tháng 10</p>
-  </header>
 
-  <main class="message-box">
-    <div class="flower-decoration top-left">🌸</div>
-    <div class="flower-decoration bottom-right">💖</div>
+    <div class="message-box">
+      <p class="greeting">💐 Gửi đến những đóa hoa xinh đẹp nhất 💖</p>
+      <p class="detail-message">Chúc bạn luôn tươi trẻ, hạnh phúc và rạng ngời trong mỗi khoảnh khắc!</p>
 
-    <p class="greeting">Gửi những đóa hoa tươi thắm nhất,<br>đến tất cả những người phụ nữ tuyệt vời!</p>
-    <p class="detail-message">
-      Chúc một nửa thế giới luôn rạng rỡ, tràn đầy niềm vui, hạnh phúc và thành công trên mọi chặng đường. 
-      Hãy luôn tỏa sáng theo cách riêng của mình nhé!
-    </p>
+      <button id="showMusic">🎵 Phát nhạc</button>
 
-    <button id="playBtn">🎶 Phát nhạc</button>
-    <button onclick="celebrate()">💐 Tôn Vinh Vẻ Đẹp Việt</button>
-    <div id="messageBox" class="message"></div>
+      <div id="playerBox" class="soundcloud-box">
+        <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vux0501/sai-gon-hom-nay-mua-lofi-ver-by-vux-jsol-hoang-duyen&color=%23ff5500&inverse=false&auto_play=false&show_user=true">
+        </iframe>
+        <p style="font-size: 12px; color: #555; margin-top: 5px;">🎧 Sài Gòn Hôm Nay Mưa (Lofi Ver.) - Vux ft. Jsol & Hoàng Duyên</p>
+      </div>
+    </div>
+  </div>
 
-    <!-- SoundCloud player thật (ẩn giao diện) -->
-    <iframe id="soundPlayer" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1061862610&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-    </iframe>
-  </main>
+  <script>
+    const btn = document.getElementById("showMusic");
+    const box = document.getElementById("playerBox");
 
-  <footer><p>Với tất cả sự trân trọng và yêu thương!</p></footer>
-</div>
+    btn.onclick = () => {
+      box.style.display = "block";
+      btn.style.display = "none";
+    };
+  </script>
 
-<script src="https://w.soundcloud.com/player/api.js"></script>
-<script>
-const playBtn = document.getElementById('playBtn');
-const iframe = document.getElementById('soundPlayer');
-const player = SC.Widget(iframe);
-const msg = document.getElementById('messageBox');
-
-let playing = false;
-
-playBtn.onclick = () => {
-  player.isPaused(paused => {
-    if (paused) {
-      player.play();
-      playBtn.textContent = "⏸️ Dừng nhạc";
-      showMessage();
-      playing = true;
-    } else {
-      player.pause();
-      playBtn.textContent = "🎶 Phát nhạc";
-      playing = false;
-    }
-  });
-};
-
-function showMessage() {
-  msg.innerHTML = `
-    💐 <b>Gửi đến những bông hoa tuyệt vời nhất:</b><br>
-    Chúc bạn luôn tỏa sáng, rạng rỡ và tràn đầy yêu thương! 🌸<br>
-    Mỗi ngày đều là một ngày đặc biệt dành cho bạn 💖
-  `;
-  msg.classList.add('show');
-}
-
-function celebrate() {
-  alert("🌷 Chúc bạn luôn xinh đẹp, vui vẻ và hạnh phúc! 💖");
-}
-
-// hiệu ứng hoa rơi
-const emojis = ['🌸','🌷','💖','🌺','🌹'];
-setInterval(() => {
-  const f = document.createElement('div');
-  f.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-  f.className = 'flower';
-  f.style.left = Math.random() * 100 + 'vw';
-  f.style.fontSize = Math.random() * 20 + 20 + 'px';
-  f.style.animationDuration = (Math.random() * 4 + 4) + 's';
-  document.body.appendChild(f);
-  setTimeout(() => f.remove(), 8000);
-}, 400);
-</script>
 </body>
 </html>
