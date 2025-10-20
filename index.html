@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -11,12 +11,12 @@
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #ffe6f0, #ffccff);
       color: #333;
-      text-align: center;
       overflow-x: hidden;
+      text-align: center;
     }
 
     .container {
-      padding: 60px 20px;
+      padding: 50px 20px;
     }
 
     h1 {
@@ -26,17 +26,17 @@
     }
 
     .subtitle {
+      font-size: 1.2em;
       color: #ff4081;
-      font-weight: bold;
     }
 
     .message-box {
       background: rgba(255, 255, 255, 0.85);
-      display: inline-block;
       padding: 30px 40px;
-      border-radius: 25px;
+      border-radius: 20px;
       box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
-      margin-top: 20px;
+      display: inline-block;
+      margin-top: 25px;
       max-width: 600px;
     }
 
@@ -50,26 +50,26 @@
       font-size: 1em;
     }
 
-    button {
-      margin-top: 20px;
+    .celebrate-button {
       background: #e91e63;
+      color: white;
       border: none;
-      color: #fff;
-      padding: 12px 28px;
+      padding: 12px 25px;
       border-radius: 25px;
       font-size: 1.1em;
       cursor: pointer;
       transition: 0.3s;
+      margin-top: 20px;
     }
 
-    button:hover {
+    .celebrate-button:hover {
       background: #ff4081;
       transform: scale(1.05);
     }
 
     .soundcloud-box {
-      margin-top: 25px;
       display: none;
+      margin-top: 25px;
       animation: fadeIn 1s ease forwards;
     }
 
@@ -77,38 +77,56 @@
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    .footer-text {
+      margin-top: 40px;
+      color: #880e4f;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
-
   <div class="container">
-    <h1>Ngày Phụ Nữ Việt Nam</h1>
-    <p class="subtitle">20 tháng 10</p>
+    <header>
+      <h1>Ngày Phụ Nữ Việt Nam</h1>
+      <p class="subtitle">20 tháng 10</p>
+    </header>
 
-    <div class="message-box">
+    <main class="message-box">
       <p class="greeting">💐 Gửi đến những đóa hoa xinh đẹp nhất 💖</p>
-      <p class="detail-message">Chúc bạn luôn tươi trẻ, hạnh phúc và rạng ngời trong mỗi khoảnh khắc!</p>
+      <p class="detail-message">
+        Chúc bạn luôn tươi trẻ, hạnh phúc và rạng ngời trong mỗi khoảnh khắc!  
+        Hãy luôn tỏa sáng theo cách riêng của mình nhé 🌸
+      </p>
 
-      <button id="showMusic">🎵 Phát nhạc</button>
+      <button class="celebrate-button" id="playBtn">🎵 Tôn Vinh Vẻ Đẹp Việt</button>
 
-      <div id="playerBox" class="soundcloud-box">
-        <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/vux0501/sai-gon-hom-nay-mua-lofi-ver-by-vux-jsol-hoang-duyen&color=%23ff5500&inverse=false&auto_play=false&show_user=true">
+      <div class="soundcloud-box" id="playerBox">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1061862610&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
         </iframe>
-        <p style="font-size: 12px; color: #555; margin-top: 5px;">🎧 Sài Gòn Hôm Nay Mưa (Lofi Ver.) - Vux ft. Jsol & Hoàng Duyên</p>
+        <div style="font-size: 10px; color: #999; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: 'Montserrat', sans-serif; margin-top: 5px;">
+          <a href="https://soundcloud.com/vux0501" title="VUX" target="_blank" style="color: #999; text-decoration: none;">VUX</a> · 
+          <a href="https://soundcloud.com/vux0501/sai-gon-hom-nay-mua-lofi-ver-by-vux-jsol-hoang-duyen" 
+             title="SÀI GÒN HÔM NAY MƯA (lofi ver. by VUX) - JSOL &amp; HOÀNG DUYÊN" 
+             target="_blank" style="color: #999; text-decoration: none;">SÀI GÒN HÔM NAY MƯA (Lofi Ver.) - JSOL &amp; HOÀNG DUYÊN</a>
+        </div>
       </div>
-    </div>
+    </main>
+
+    <footer>
+      <p class="footer-text">Với tất cả sự trân trọng và yêu thương 💕</p>
+    </footer>
   </div>
 
   <script>
-    const btn = document.getElementById("showMusic");
-    const box = document.getElementById("playerBox");
+    const btn = document.getElementById('playBtn');
+    const box = document.getElementById('playerBox');
 
     btn.onclick = () => {
-      box.style.display = "block";
-      btn.style.display = "none";
+      box.style.display = 'block';
+      btn.style.display = 'none';
     };
   </script>
-
 </body>
 </html>
